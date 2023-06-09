@@ -12,6 +12,6 @@ class Color extends Model
 
     public function products()
     {
-        return $this->hasMany('App\Color');
+        return $this->hasMany(Product::class);
     }
 }

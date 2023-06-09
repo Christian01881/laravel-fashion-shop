@@ -15,8 +15,8 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categorys = config('dataseeder.categorys');
-        foreach($categorys as $category)
+        $categories = config('dataseeder.categories');
+        foreach($categories as $category)
         {
             $newCategory = new Category();
             $newCategory->name = $category;
