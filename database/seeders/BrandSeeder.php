@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Brand;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,12 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $brands = config('dataseeder.brands');
+        foreach($brands as $brand)
+        {
+            $newBrand = new Brand();
+            $newBrand->name = $brand;
+            $newBrand->save();
+        }
     }
 }
