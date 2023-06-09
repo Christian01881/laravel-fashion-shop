@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('colors', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('name')->nullable(false)->unique();
+            $table->string('hex_value')->unique()->nullable(false);
             $table->timestamps();
         });
     }
